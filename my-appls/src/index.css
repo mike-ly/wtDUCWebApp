@@ -1,0 +1,353 @@
+/*==========================================================================*/
+/* -GENERAL START */
+/*==========================================================================*/
+
+/* GOLD: #dcba4d */
+/* BLUE-LIGHTER: #0142C2 */
+/* BLUE-LIGHT: #003296 */
+/* BLUE: #002878 */
+/* BLUE-DARK: #001F5B */
+/* BLUE-DARKER: #001338 */
+
+@font-face {
+
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500');
+
+body {
+	margin: 0;
+	font-family: 'Roboto', 'sans-serif';
+	color: #222222;
+	transition: all 0.5s ease-in-out;
+	background: #fff;
+}
+
+::selection {
+  /*background: #e8f5e9;*/ /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  /*background: #e8f5e9;*/ /* Gecko Browsers */
+}
+
+a, br, .noselect {
+	text-decoration: none;
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+div, a, p {
+	box-sizing: border-box;
+}
+
+a:hover {
+	cursor: pointer;
+}
+
+.mid:hover {
+	cursor: none;
+}
+
+.z-depth-0 {
+ 	box-shadow: none !important;
+}
+
+.z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-floating, .dropdown-content, .collapsible, .side-nav {
+ 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+.z-depth-2 {
+ 	box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
+}
+
+.z-depth-3 {
+ 	box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3);
+}
+
+.z-depth-4, .modal {
+ 	box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3);
+}
+
+.z-depth-5 {
+ 	box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+.contentContainer {
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: auto 32px;
+}
+
+.standardText {
+  font-weight: 300;
+  letter-spacing: 0.25px;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 175%;
+  margin: 0;
+}
+
+.blueText {
+  color: #002878;
+  font-weight: 500;
+}
+
+.standardDivider {
+  height: 1px;
+  background: #eceff1;
+  width: 100%;
+  margin: 8px auto;
+}
+
+.standardContentContainer {
+  background: #fff;
+  margin: 0 auto 12px auto;
+  border-radius: 5px;
+  border: 1px solid #cfd8dc;
+  padding: 8px 18px;
+}
+
+.coloredHeaderContentContainer {
+  background: #fff;
+  margin: 0 auto 12px auto;
+  border-radius: 5px;
+  border: 1px solid #cfd8dc;
+  overflow: hidden;
+}
+
+.coloredHeader {
+  display: block;
+  background: #002878;
+  padding: 8px 18px;
+  color: #fff;
+  font-weight: 500;
+  transition: all 0.15s;
+}
+
+.coloredHeader:hover {
+  background: #0142C2;
+}
+
+.coloredHeaderContentInnerContainer {
+  padding: 8px 18px;
+}
+
+/*==========================================================================*/
+/* -GENERAL END */
+/*==========================================================================*/
+/*==========================================================================*/
+/* -APP START */
+/*==========================================================================*/
+
+.appContainer {
+  background: #eceff1;
+  padding-top: 52px;
+  height: 100%;
+  width: 100%;
+}
+
+.appContentContainer {
+  min-height: calc(100vh - 52px);
+  margin: 0 auto;
+  padding-top: 24px;
+  display: grid;
+  grid-gap: 18px;
+  grid-template:
+    [row1-start] "c1 c2" auto [row1-end]
+    /65fr 35fr;
+}
+
+/*==========================================================================*/
+/* -APP END */
+/*==========================================================================*/
+/*==========================================================================*/
+/* -NAVBAR START */
+/*==========================================================================*/
+
+.navBarGeneralContainer {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 52px;
+  background: #fff;
+  border-bottom: 1px solid #cfd8dc;
+  z-index: 1;
+}
+
+.navBarContentContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navBarSectionLeft {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: auto;
+}
+
+.navBarSectionRight {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: auto;
+}
+
+.navBarLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  padding: 0 16px;
+  position: relative;
+}
+
+.navBarLinkUnderline {
+  position: absolute;
+  height: 1px;
+  width: 0%;
+  bottom: 0;
+  background: #002878;
+  transition: all 0.15s;
+}
+
+.navBarLinkText {
+  color: #b0bec5;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+  margin-left: 4px;
+  transition: all 0.15s;
+}
+
+.navBarLink.active > .navBarLinkText, .navBarLink:hover > .navBarLinkText {
+  color: #002878;
+}
+
+.navBarLink.active > .navBarLinkUnderline, .navBarLink:hover > .navBarLinkUnderline {
+  width: 100%;
+  height: 2px;
+}
+
+.navBarLogo {
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  left: calc(50% - 12px);
+}
+
+.navBarWriteReviewLink {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  padding: 0 18px;
+  background: #002878;
+  color: #fff;
+  font-weight: 400;
+  text-transform: uppercase;
+  border-radius: 16px;
+  border: 1px solid transparent;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  transition: all 0.15s;
+}
+
+.navBarWriteReviewLink:hover {
+  background: #0142C2;
+}
+
+.navBarWriteReviewIcon {
+  color: #002878 !important;
+  background: #002878 !important;
+}
+
+/*==========================================================================*/
+/* -NAVBAR END */
+/*==========================================================================*/
+/*==========================================================================*/
+/* -FILTERBAR START */
+/*==========================================================================*/
+
+.filterBarGeneralContainer {
+  background: #fff;
+  width: 100%;
+  height: 46px;
+  border-bottom: 1px solid #cfd8dc;
+}
+
+.filterBarContentContainer {
+  height: 46px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.filterBarOptionDivider {
+  height: 50%;
+  margin: 0;
+  width: 1px;
+  background: #eceff1;
+}
+
+.filterBarOptionContainer {
+  height: 46px;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.filterBarOptionName {
+  height: 24px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #002878;  
+  line-height: 24px;
+  margin: 0 4px;
+}
+
+/*==========================================================================*/
+/* -FILTERBAR END */
+/*==========================================================================*/
+/*==========================================================================*/
+/* -STATIC START */
+/*==========================================================================*/
+
+.staticGeneralContainer {
+  grid-area: 'c2';
+  width: 100%;
+}
+
+.menuTitle {
+  font-weight: 500;
+}
+
+/*==========================================================================*/
+/* -STATIC END */
+/*==========================================================================*/
+/*==========================================================================*/
+/* -HOME START */
+/*==========================================================================*/
+
+.homeGeneralContainer {
+  grid-area: 'c1';
+  width: 100%;
+}
+
+/*==========================================================================*/
+/* -HOME END */
+/*==========================================================================*/
