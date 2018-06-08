@@ -1,5 +1,5 @@
 import React from 'react';
-import MaterialIcon, {colorPallet} from 'material-icons-react';
+import MaterialIcon from 'material-icons-react';
 
 class NavBar extends React.Component {
   constructor(props) {

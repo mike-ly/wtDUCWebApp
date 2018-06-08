@@ -1,5 +1,5 @@
 import React from 'react';
-import MaterialIcon, {colorPallet} from 'material-icons-react';
+import MaterialIcon from 'material-icons-react';
 
 class FilterBar extends React.Component {
   constructor(props) {
@@ -12,8 +12,8 @@ class FilterBar extends React.Component {
       <div className="filterBarGeneralContainer">
         <div className="contentContainer filterBarContentContainer">
           <a className="filterBarOptionContainer">
-            <div className="standardText filterBarOptionName">
-              <MaterialIcon icon="location_on" color="#002878" />
+            <div className="standardText filterBarOptionButton">
+              <MaterialIcon icon="location_on" color="#002878"/>
             </div>
             <div className="standardText filterBarOptionName">
               Emory University
@@ -21,7 +21,7 @@ class FilterBar extends React.Component {
           </a>
           <div className="filterBarOptionDivider"></div>
           <a className="filterBarOptionContainer">
-            <div className="standardText filterBarOptionName">
+            <div className="standardText filterBarOptionButton">
               <MaterialIcon icon="store" color="#002878" />
             </div>
             <div className="standardText filterBarOptionName">
@@ -30,7 +30,7 @@ class FilterBar extends React.Component {
           </a>
           <div className="filterBarOptionDivider"></div>
           <a className="filterBarOptionContainer">
-            <div className="standardText filterBarOptionName">
+            <div className="standardText filterBarOptionButton">
               <MaterialIcon icon="access_time" color="#002878" />
             </div>
             <div className="standardText filterBarOptionName">
@@ -39,7 +39,7 @@ class FilterBar extends React.Component {
           </a>
           <div className="filterBarOptionDivider"></div>
           <a className="filterBarOptionContainer">
-            <div className="standardText filterBarOptionName">
+            <div className="standardText filterBarOptionButton">
               <MaterialIcon icon="filter_list" color="#002878" />
             </div>
             <div className="standardText filterBarOptionName">

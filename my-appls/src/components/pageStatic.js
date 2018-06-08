@@ -12,21 +12,21 @@ class StaticPage extends React.Component {
         <div className="coloredHeaderContentContainer">
           <a className="coloredHeader standardText">Daily Score</a>
           <div className="coloredHeaderContentInnerContainer">
-            <p className="standardText">Breakfast:</p>
-            <div className="standardDivider"></div>
-            <p className="standardText">Lunch:</p>
-            <div className="standardDivider"></div>
-            <p className="standardText">Dinner:</p>
+            <p className="standardText standardTextPaddingHorizontal scoreText">Breakfast:</p>
+            <div className="standardDividerNoMargin"></div>
+            <p className="standardText standardTextPaddingHorizontal scoreText">Lunch:</p>
+            <div className="standardDividerNoMargin"></div>
+            <p className="standardText standardTextPaddingHorizontal scoreText">Dinner:</p>
           </div>
         </div>
         <div className="coloredHeaderContentContainer">
           <a className="coloredHeader standardText">Menu</a>
           <div className="coloredHeaderContentInnerContainer">
-            <p className="standardText menuTitle">Breakfast<br/></p>
-            <div className="standardDivider"></div>
-            <p className="standardText menuTitle">Lunch<br/></p>
-            <div className="standardDivider"></div>
-            <p className="standardText menuTitle">Dinner<br/></p>
+            <a className="standardText standardTextPaddingHorizontal menuTitle">Breakfast<br/></a>
+            <div className="standardDividerNoMargin"></div>
+            <a className="standardText standardTextPaddingHorizontal menuTitle">Lunch<br/></a>
+            <div className="standardDividerNoMargin"></div>
+            <a className="standardText standardTextPaddingHorizontal menuTitle">Dinner<br/></a>
           </div>
         </div>
       </div>

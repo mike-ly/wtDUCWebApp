@@ -92,6 +92,16 @@ a:hover {
   margin: 0;
 }
 
+.standardTextPaddingHorizontal {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.standardTextPaddingVertical {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
 .blueText {
   color: #002878;
   font-weight: 500;
@@ -104,19 +114,28 @@ a:hover {
   margin: 8px auto;
 }
 
+.standardDividerNoMargin {
+  height: 1px;
+  background: #eceff1;
+  width: 100%;
+  margin: 0px auto;
+}
+
 .standardContentContainer {
   background: #fff;
   margin: 0 auto 12px auto;
-  border-radius: 5px;
-  border: 1px solid #cfd8dc;
-  padding: 8px 18px;
+  border-radius: 3px;
+  padding: 8px 0;
+}
+
+.standardContentPadding {
+  padding: 0 18px;
 }
 
 .coloredHeaderContentContainer {
   background: #fff;
   margin: 0 auto 12px auto;
-  border-radius: 5px;
-  border: 1px solid #cfd8dc;
+  border-radius: 3px;
   overflow: hidden;
 }
 
@@ -134,7 +153,7 @@ a:hover {
 }
 
 .coloredHeaderContentInnerContainer {
-  padding: 8px 18px;
+
 }
 
 /*==========================================================================*/
@@ -304,14 +323,30 @@ a:hover {
 }
 
 .filterBarOptionContainer {
-  height: 46px;
-  padding: 0 16px;
+  height: 38px;
+  padding: 0 12px;
+  margin: 0 4px;
   display: flex;
   flex-direction: row;
   align-items: center;
+  transition: all 0.15s;
+  border-radius: 3px;
+}
+
+.filterBarOptionContainer:hover {
+  background: #eceff1;
 }
 
 .filterBarOptionName {
+  height: 24px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #002878;  
+  line-height: 24px;
+  margin: 0 4px;
+}
+
+.filterBarOptionButton {
   height: 24px;
   font-size: 12px;
   font-weight: 500;
@@ -333,7 +368,22 @@ a:hover {
 }
 
 .menuTitle {
+  display: block;
   font-weight: 500;
+  margin: 4px;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 3px;
+  transition: all 0.15s;
+}
+
+.menuTitle:hover {
+  background: #eceff1;
+}
+
+.scoreText {
+  height: 48px;
+  line-height: 48px;
 }
 
 /*==========================================================================*/
@@ -348,6 +398,58 @@ a:hover {
   width: 100%;
 }
 
+.homeOverviewToday {
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 150%;
+}
+
+.homeOverviewDate {
+  color: #bdbdbd;
+  font-weight: 100;
+}
+
+.homeOverviewScoreContainer {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 200%;
+}
+
+.homeOverviewScoreValue {
+  font-size: 28px;
+  color: red;
+}
+
+.homeOverviewScoreDenominator {
+  font-size: 18px;
+  color: #bdbdbd;
+}
+
+.homeOverviewStatus {
+  font-size: 18px;
+  color: #757575;
+  font-weight: 100;
+  line-height: 100%;
+}
+
+.homeContentContainerStatus {
+  padding-bottom: 24px !important;
+  padding-top: 24px !important;
+}
+
+
 /*==========================================================================*/
 /* -HOME END */
+/*==========================================================================*/
+
+/*==========================================================================*/
+/* -REVIEW START */
+/*==========================================================================*/
+
+.reviewDate {
+  color: #e0e0e0;
+}
+
+/*==========================================================================*/
+/* -REVIEW END */
 /*==========================================================================*/
