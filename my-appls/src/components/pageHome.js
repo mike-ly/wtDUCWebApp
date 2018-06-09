@@ -21,7 +21,7 @@ class HomePage extends React.Component {
             <span className="homeOverviewStatus">Did someone say Ubereats?</span>
           </p>
         </div>
-        <div className="standardContentContainer writeReviewContainer z-depth-1">
+        <div className="standardContentContainer writeReviewContainer z-depth-">
           <textarea autofocus className="writeReviewInput" placeholder="How was the DUC-ling today?" />
         </div>
         <div className="standardContentContainer">
