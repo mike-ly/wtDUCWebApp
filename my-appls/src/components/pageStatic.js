@@ -9,7 +9,7 @@ class StaticPage extends React.Component {
   render() {
     return(
       <div className="staticGeneralContainer">
-        <div className="coloredHeaderContentContainer">
+        {/*<div className="coloredHeaderContentContainer">
           <a className="coloredHeader standardText">Daily Score</a>
           <div className="coloredHeaderContentInnerContainer">
             <p className="standardText standardTextPaddingHorizontal scoreText">Breakfast:</p>
@@ -18,7 +18,7 @@ class StaticPage extends React.Component {
             <div className="standardDividerNoMargin"></div>
             <p className="standardText standardTextPaddingHorizontal scoreText">Dinner:</p>
           </div>
-        </div>
+        </div>*/}
         <div className="coloredHeaderContentContainer">
           <a className="coloredHeader standardText">Menu</a>
           <div className="coloredHeaderContentInnerContainer">

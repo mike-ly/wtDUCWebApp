@@ -41,7 +41,7 @@ a, br, .noselect {
                                   supported by Chrome and Opera */
 }
 
-div, a, p {
+div, a, p, input, textarea {
 	box-sizing: border-box;
 }
 
@@ -421,6 +421,7 @@ a:hover {
 }
 
 .homeOverviewScoreDenominator {
+  font-weight: 200;
   font-size: 18px;
   color: #bdbdbd;
 }
@@ -445,6 +446,31 @@ a:hover {
 /*==========================================================================*/
 /* -REVIEW START */
 /*==========================================================================*/
+
+.writeReviewContainer {
+  padding: 0px;
+  position: relative;
+  background: #fff;
+}
+
+.writeReviewInput {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 18px;
+  border-radius: 3px;
+  border: 1px solid #eeeeee;
+  transition: all 0.3s;
+  font-size: 16px;
+  font-weight: 300;
+  resize: none;
+}
+
+.writeReviewInput:focus {
+  border: 1px solid #002878;
+  outline: none;
+}
 
 .reviewDate {
   color: #e0e0e0;

@@ -15,11 +15,14 @@ class HomePage extends React.Component {
           </p>
           <div className="standardContentPadding"><div className="standardDivider"></div></div>
           <p className="standardText standardTextPaddingHorizontal">
-            <span className="homeOverviewScoreContainer">Breakfast:&nbsp;&nbsp;
-              <b className="homeOverviewScoreValue">1.23</b><span className="homeOverviewScoreDenominator">/5</span><br/>
+            <span className="homeOverviewScoreContainer">Breakfast:&nbsp;&nbsp;&nbsp;
+              <b className="homeOverviewScoreValue">F</b><span className="homeOverviewScoreDenominator">&nbsp;(1.23/10)</span><br/>
             </span>
             <span className="homeOverviewStatus">Did someone say Ubereats?</span>
           </p>
+        </div>
+        <div className="standardContentContainer writeReviewContainer z-depth-1">
+          <textarea autofocus className="writeReviewInput" placeholder="How was the DUC-ling today?" />
         </div>
         <div className="standardContentContainer">
           <p className="standardText standardTextPaddingHorizontal standardTextPaddingVertical">
