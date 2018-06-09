@@ -128,8 +128,19 @@ a:hover {
   padding: 8px 0;
 }
 
+.standardTextFloatLeft {
+  float: left;
+  display: inline-block;
+}
+
 .standardContentPadding {
   padding: 0 18px;
+}
+
+.standardContentFlexRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .coloredHeaderContentContainer {
@@ -152,8 +163,8 @@ a:hover {
   background: #0142C2;
 }
 
-.coloredHeaderContentInnerContainer {
-
+.standardClear {
+  clear: both;
 }
 
 /*==========================================================================*/
@@ -410,9 +421,15 @@ a:hover {
 }
 
 .homeOverviewScoreContainer {
+  padding-top: 12px;
+}
+
+.homeOverviewScoreTitle {
   font-size: 24px;
   font-weight: 300;
-  line-height: 200%;
+  line-height: 32px;
+  height: 32px;
+  width: 144px;
 }
 
 .homeOverviewScoreValue {
@@ -421,12 +438,17 @@ a:hover {
 }
 
 .homeOverviewScoreDenominator {
-  font-weight: 200;
+  font-weight: 400;
   font-size: 18px;
   color: #bdbdbd;
 }
 
+.homeOverviewScoreReviewCount {
+  font-weight: 200;
+}
+
 .homeOverviewStatus {
+  margin-top: 12px;
   font-size: 18px;
   color: #757575;
   font-weight: 100;
@@ -448,6 +470,7 @@ a:hover {
 /*==========================================================================*/
 
 .writeReviewContainer {
+  margin-top: 24px;
   padding: 0px;
   position: relative;
   background: #fff;
@@ -460,7 +483,7 @@ a:hover {
   margin: 0;
   padding: 18px;
   border-radius: 3px;
-  border: 1px solid #e0e0e0;
+  border: 2px solid #e0e0e0;
   transition: all 0.3s;
   font-size: 16px;
   font-weight: 500;
@@ -468,12 +491,39 @@ a:hover {
 }
 
 .writeReviewInput:focus {
-  border: 1px solid #002878;
+  border: 2px solid #002878;
   outline: none;
 }
 
 .reviewDate {
   color: #e0e0e0;
+}
+
+.displayScoreBar {
+  height: 32px;
+  display: flex;
+  flex-direction: row;
+}
+
+.displayScoreBarUnit {
+  position: relative;
+  height: 100%;
+  width: 32px;
+  background: #eeeeee;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.displayScoreBarUnitFill {
+  height: 100%;
+  width: 100%;
+  background: red;
+}
+
+.displayScoreBarDivider {
+  height: 100%;
+  width: 1px;
+  background: transparent;
 }
 
 /*==========================================================================*/

@@ -5,7 +5,7 @@ class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      links: ["Home", "Stats", "About"],
+      links: ["Home", "Menus", "Stats", "About"],
       activeLinkId: 0,
     };
   }

@@ -14,15 +14,62 @@ class HomePage extends React.Component {
             <span className="homeOverviewToday">Today<span className="homeOverviewDate">&nbsp;&nbsp;&nbsp;Monday, May 21</span></span>
           </p>
           <div className="standardContentPadding"><div className="standardDivider"></div></div>
-          <p className="standardText standardTextPaddingHorizontal">
-            <span className="homeOverviewScoreContainer">Breakfast:&nbsp;&nbsp;&nbsp;
-              <b className="homeOverviewScoreValue">F</b><span className="homeOverviewScoreDenominator">&nbsp;(1.23/10)</span><br/>
-            </span>
-            <span className="homeOverviewStatus">Did someone say Ubereats?</span>
-          </p>
+          <div className="standardContentPadding standardContentFlexRow homeOverviewScoreContainer">
+            <p className="standardText standardTextFloatLeft homeOverviewScoreTitle">
+              Breakfast:
+            </p>
+            <div className="displayScoreBar">
+              <div className="displayScoreBarUnit"><div className="displayScoreBarUnitFill"></div></div>
+              <div className="displayScoreBarDivider"></div>
+              <div className="displayScoreBarUnit"></div>
+              <div className="displayScoreBarDivider"></div>
+              <div className="displayScoreBarUnit"></div>
+              <div className="displayScoreBarDivider"></div>
+              <div className="displayScoreBarUnit"></div>
+              <div className="displayScoreBarDivider"></div>
+              <div className="displayScoreBarUnit"></div>
+            </div>
+            <p className="standardText homeOverviewScoreDenominator">&nbsp;&nbsp;&nbsp;1/5 <span className="homeOverviewScoreReviewCount"></span></p>
+          </div>
+          <div className="standardContentPadding standardContentFlexRow homeOverviewScoreContainer">
+            <p className="standardText standardTextFloatLeft homeOverviewScoreTitle">
+              Lunch:
+            </p>
+            <div className="displayScoreBar">
+              <div className="displayScoreBarUnit"><div className="displayScoreBarUnitFill"></div></div>
+              <div className="displayScoreBarDivider"></div>
+              <div className="displayScoreBarUnit"></div>
+              <div className="displayScoreBarDivider"></div>
+              <div className="displayScoreBarUnit"></div>
+              <div className="displayScoreBarDivider"></div>
+              <div className="displayScoreBarUnit"></div>
+              <div className="displayScoreBarDivider"></div>
+              <div className="displayScoreBarUnit"></div>
+            </div>
+            <p className="standardText homeOverviewScoreDenominator">&nbsp;&nbsp;&nbsp;1/5 <span className="homeOverviewScoreReviewCount"></span></p>
+          </div>
+          <div className="standardContentPadding standardContentFlexRow homeOverviewScoreContainer">
+            <p className="standardText standardTextFloatLeft homeOverviewScoreTitle">
+              Dinner:
+            </p>
+            <div className="displayScoreBar">
+              <div className="displayScoreBarUnit"><div className="displayScoreBarUnitFill"></div></div>
+              <div className="displayScoreBarDivider"></div>
+              <div className="displayScoreBarUnit"></div>
+              <div className="displayScoreBarDivider"></div>
+              <div className="displayScoreBarUnit"></div>
+              <div className="displayScoreBarDivider"></div>
+              <div className="displayScoreBarUnit"></div>
+              <div className="displayScoreBarDivider"></div>
+              <div className="displayScoreBarUnit"></div>
+            </div>
+            <p className="standardText homeOverviewScoreDenominator">&nbsp;&nbsp;&nbsp;1/5 <span className="homeOverviewScoreReviewCount"></span></p>
+          </div>
+          <div className="standardClear"></div>
+          {/*<p className="standardText standardTextPaddingHorizontal homeOverviewStatus">Did someone say Ubereats?</p>*/}
         </div>
         <div className="standardContentContainer writeReviewContainer z-depth-">
-          <textarea autofocus className="writeReviewInput" placeholder="How was the DUC-ling today?" />
+          <textarea autoFocus className="writeReviewInput" placeholder="How was the DUC-ling today?" />
         </div>
         <div className="standardContentContainer">
           <p className="standardText standardTextPaddingHorizontal standardTextPaddingVertical">

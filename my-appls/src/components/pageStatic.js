@@ -20,7 +20,7 @@ class StaticPage extends React.Component {
           </div>
         </div>*/}
         <div className="coloredHeaderContentContainer">
-          <a className="coloredHeader standardText">Menu</a>
+          <a className="coloredHeader standardText">Current Menu</a>
           <div className="coloredHeaderContentInnerContainer">
             <a className="standardText standardTextPaddingHorizontal menuTitle">Breakfast<br/></a>
             <div className="standardDividerNoMargin"></div>
