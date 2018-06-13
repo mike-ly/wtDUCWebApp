@@ -278,33 +278,6 @@ a:hover {
   left: calc(50% - 12px);
 }
 
-.navBarWriteReviewLink {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 32px;
-  padding: 0 18px;
-  background: #002878;
-  color: #fff;
-  font-weight: 400;
-  text-transform: uppercase;
-  border-radius: 16px;
-  border: 1px solid transparent;
-  font-size: 14px;
-  letter-spacing: 0.5px;
-  transition: all 0.15s;
-}
-
-.navBarWriteReviewLink:hover {
-  background: #0142C2;
-}
-
-.navBarWriteReviewIcon {
-  color: #002878 !important;
-  background: #002878 !important;
-}
-
 /*==========================================================================*/
 /* -NAVBAR END */
 /*==========================================================================*/
@@ -427,11 +400,11 @@ a:hover {
 }
 
 .homeOverviewScoreTitle {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 300;
-  line-height: 32px;
-  height: 32px;
-  width: 144px;
+  line-height: 28px;
+  height: 28px;
+  width: 110px;
 }
 
 .homeOverviewScoreValue {
@@ -440,8 +413,8 @@ a:hover {
 }
 
 .homeOverviewScoreDenominator {
-  font-weight: 400;
-  font-size: 18px;
+  font-weight: 300;
+  font-size: 16px;
   color: #bdbdbd;
 }
 
@@ -473,7 +446,7 @@ a:hover {
 
 .writeReviewContainer {
   margin-top: 24px;
-  padding: 0px;
+  padding: 8px;
   position: relative;
   background: #fff;
 }
@@ -483,26 +456,88 @@ a:hover {
   width: 100%;
   height: 100%;
   margin: 0;
-  padding: 18px;
+  padding: 13px;
   border-radius: 3px;
-  border: 2px solid #e0e0e0;
-  transition: all 0.3s;
+  border: 1px solid #e0e0e0;
+  transition: all 0.15s;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
   resize: none;
+  letter-spacing: 0.25px;
+  background: #fafafa;
 }
 
 .writeReviewInput:focus {
   border: 2px solid #002878;
+  padding: 12px;
   outline: none;
+}
+
+.writeReviewBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.writeReviewScoreBar {
+  height: 24px;
 }
 
 .reviewDate {
   color: #e0e0e0;
 }
 
-.displayScoreBar {
+.writeReviewScoreTitle {
+  line-height: 32px;
+  margin-right: 12px;
+  margin-left: 4px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.writeReviewDisplayScoreBar {
   height: 32px;
+  display: flex;
+  flex-direction: row;
+}
+
+.writeReviewDisplayScoreBarUnit {
+  position: relative;
+  height: 100%;
+  width: 32px;
+  border: 1px solid #e0e0e0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.writeReviewDisplayScoreBarUnitFill {
+  height: 100%;
+  width: 100%;
+  background: #fafafa;
+  color: #fafafa;
+  text-align: center;
+  line-height: 32px;
+  font-weight: 500;
+  transition: all 0.15s;
+}
+
+.writeReviewDisplayScoreBarUnitFill:hover {
+  background: #002878;
+  color: #fff;
+}
+
+.writeReviewDisplayScoreBarDivider {
+  height: 100%;
+  width: 1px;
+  background: transparent;
+}
+
+.displayScoreBar {
+  height: 28px;
   display: flex;
   flex-direction: row;
 }
@@ -510,7 +545,7 @@ a:hover {
 .displayScoreBarUnit {
   position: relative;
   height: 100%;
-  width: 32px;
+  width: 28px;
   background: #f5f5f5;
   border-radius: 3px;
   overflow: hidden;
@@ -519,13 +554,44 @@ a:hover {
 .displayScoreBarUnitFill {
   height: 100%;
   width: 100%;
-  background: red;
+  background: #ef5350;
 }
 
 .displayScoreBarDivider {
   height: 100%;
   width: 1px;
   background: transparent;
+}
+
+.writeReviewLink {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  padding: 0 18px;
+  background: #002878;
+  color: #fff;
+  font-weight: 400;
+  text-transform: uppercase;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  transition: all 0.15s;
+}
+
+.writeReviewLink.inactive {
+  opacity: 0.8;
+}
+
+.writeReviewLink:hover {
+  background: #0142C2;
+}
+
+.writeReviewIcon {
+  color: #002878 !important;
+  background: #002878 !important;
 }
 
 /*==========================================================================*/

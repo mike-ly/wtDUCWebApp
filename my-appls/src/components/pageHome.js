@@ -1,4 +1,5 @@
 import React from 'react';
+import MaterialIcon from 'material-icons-react';
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class HomePage extends React.Component {
           <div className="standardContentPadding"><div className="standardDivider"></div></div>
           <div className="standardContentPadding standardContentFlexRow homeOverviewScoreContainer">
             <p className="standardText standardTextFloatLeft homeOverviewScoreTitle">
-              Breakfast:
+              Breakfast
             </p>
             <div className="displayScoreBar">
               <div className="displayScoreBarUnit"><div className="displayScoreBarUnitFill"></div></div>
@@ -33,7 +34,7 @@ class HomePage extends React.Component {
           </div>
           <div className="standardContentPadding standardContentFlexRow homeOverviewScoreContainer">
             <p className="standardText standardTextFloatLeft homeOverviewScoreTitle">
-              Lunch:
+              Lunch
             </p>
             <div className="displayScoreBar">
               <div className="displayScoreBarUnit"><div className="displayScoreBarUnitFill"></div></div>
@@ -50,7 +51,7 @@ class HomePage extends React.Component {
           </div>
           <div className="standardContentPadding standardContentFlexRow homeOverviewScoreContainer">
             <p className="standardText standardTextFloatLeft homeOverviewScoreTitle">
-              Dinner:
+              Dinner
             </p>
             <div className="displayScoreBar">
               <div className="displayScoreBarUnit"><div className="displayScoreBarUnitFill"></div></div>
@@ -70,6 +71,24 @@ class HomePage extends React.Component {
         </div>
         <div className="standardContentContainer writeReviewContainer z-depth-">
           <textarea autoFocus className="writeReviewInput" placeholder="How was the DUC-ling today?" />
+          <div className="writeReviewBar">
+            <div className="writeReviewDisplayScoreBar">
+              <p className="standardText writeReviewScoreTitle">Score =</p>
+              <a className="writeReviewDisplayScoreBarUnit"><div className="writeReviewDisplayScoreBarUnitFill standardText">1</div></a>
+              <div className="writeReviewDisplayScoreBarDivider"></div>
+              <a className="writeReviewDisplayScoreBarUnit"><div className="writeReviewDisplayScoreBarUnitFill standardText">2</div></a>
+              <div className="writeReviewDisplayScoreBarDivider"></div>
+              <a className="writeReviewDisplayScoreBarUnit"><div className="writeReviewDisplayScoreBarUnitFill standardText">3</div></a>
+              <div className="writeReviewDisplayScoreBarDivider"></div>
+              <a className="writeReviewDisplayScoreBarUnit"><div className="writeReviewDisplayScoreBarUnitFill standardText">4</div></a>
+              <div className="writeReviewDisplayScoreBarDivider"></div>
+              <a className="writeReviewDisplayScoreBarUnit"><div className="writeReviewDisplayScoreBarUnitFill standardText">5</div></a>
+            </div>
+            <a className="writeReviewLink inactive z-depth-1">
+              <MaterialIcon class="writeReviewIcon" icon="" size={16} />
+              <span>Quack</span>
+            </a>
+          </div>
         </div>
         <div className="standardContentContainer">
           <p className="standardText standardTextPaddingHorizontal standardTextPaddingVertical">

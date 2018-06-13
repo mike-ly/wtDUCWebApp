@@ -51,10 +51,10 @@ class NavBar extends React.Component {
           </div>
           <img className="navBarLogo" src={require('../images/logoOriginalBlue.png')} />
           <div className="navBarSectionRight">
-            <a className="navBarWriteReviewLink z-depth-1">
+            {/*<a className="navBarWriteReviewLink z-depth-1">
               <MaterialIcon class="navBarWriteReviewIcon" icon="" size={16} />
               <span>Quack</span>
-            </a>
+            </a>*/}
           </div>
         </div>
       </div>
