@@ -92,12 +92,12 @@ class HomePage extends React.Component {
         </div>
         <div className="standardContentContainer">
           <p className="standardText standardTextPaddingHorizontal standardTextPaddingVertical">
-            <b>Goofy Goose</b>&nbsp;&nbsp;&nbsp;&nbsp;<span className="reviewDate">5/21/2018</span><br/>
+            <b>Goofy Goose</b>&nbsp;&nbsp;<span className="reviewDate">&bull;&nbsp;&nbsp;24 min</span><br/>
             The DUC is not that good today, menu sucks. Better to go to COX.
           </p>
           <div className="standardDivider"></div>
           <p className="standardText standardTextPaddingHorizontal standardTextPaddingVertical">
-            <b>Daffy Duck</b>&nbsp;&nbsp;&nbsp;&nbsp;<span className="reviewDate">5/21/2018</span><br/>
+            <b>Daffy Duck</b>&nbsp;&nbsp;<span className="reviewDate">&bull;&nbsp;&nbsp;11 min</span><br/>
             Wouldn't recommend, workers are grumpy today >:(
           </p>
         </div>
