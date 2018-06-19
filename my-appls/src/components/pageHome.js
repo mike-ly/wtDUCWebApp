@@ -10,7 +10,7 @@ class HomePage extends React.Component {
   render() {
     return(
       <div className="homeGeneralContainer">
-        <div className="standardContentContainer homeContentContainerStatus">
+        <div className="standardContentContainer homeContentContainerStatus z-depth-1">
           <p className="standardText standardTextPaddingHorizontal">
             <span className="homeOverviewToday">Today<span className="homeOverviewDate">&nbsp;&nbsp;&nbsp;Monday, May 21</span></span>
           </p>
@@ -91,6 +91,36 @@ class HomePage extends React.Component {
           </div>
         </div>
         <div className="standardContentContainer">
+          <p className="standardText standardTextPaddingHorizontal standardTextPaddingVertical">
+            <b>Goofy Goose</b>&nbsp;&nbsp;<span className="reviewDate">&bull;&nbsp;&nbsp;24 min</span><br/>
+            The DUC is not that good today, menu sucks. Better to go to COX.
+          </p>
+          <div className="standardDivider"></div>
+          <p className="standardText standardTextPaddingHorizontal standardTextPaddingVertical">
+            <b>Daffy Duck</b>&nbsp;&nbsp;<span className="reviewDate">&bull;&nbsp;&nbsp;11 min</span><br/>
+            Wouldn't recommend, workers are grumpy today >:(
+          </p>
+          <div className="standardDivider"></div>
+          <p className="standardText standardTextPaddingHorizontal standardTextPaddingVertical">
+            <b>Goofy Goose</b>&nbsp;&nbsp;<span className="reviewDate">&bull;&nbsp;&nbsp;24 min</span><br/>
+            The DUC is not that good today, menu sucks. Better to go to COX.
+          </p>
+          <div className="standardDivider"></div>
+          <p className="standardText standardTextPaddingHorizontal standardTextPaddingVertical">
+            <b>Daffy Duck</b>&nbsp;&nbsp;<span className="reviewDate">&bull;&nbsp;&nbsp;11 min</span><br/>
+            Wouldn't recommend, workers are grumpy today >:(
+          </p>
+          <div className="standardDivider"></div>
+          <p className="standardText standardTextPaddingHorizontal standardTextPaddingVertical">
+            <b>Goofy Goose</b>&nbsp;&nbsp;<span className="reviewDate">&bull;&nbsp;&nbsp;24 min</span><br/>
+            The DUC is not that good today, menu sucks. Better to go to COX.
+          </p>
+          <div className="standardDivider"></div>
+          <p className="standardText standardTextPaddingHorizontal standardTextPaddingVertical">
+            <b>Daffy Duck</b>&nbsp;&nbsp;<span className="reviewDate">&bull;&nbsp;&nbsp;11 min</span><br/>
+            Wouldn't recommend, workers are grumpy today >:(
+          </p>
+          <div className="standardDivider"></div>
           <p className="standardText standardTextPaddingHorizontal standardTextPaddingVertical">
             <b>Goofy Goose</b>&nbsp;&nbsp;<span className="reviewDate">&bull;&nbsp;&nbsp;24 min</span><br/>
             The DUC is not that good today, menu sucks. Better to go to COX.
