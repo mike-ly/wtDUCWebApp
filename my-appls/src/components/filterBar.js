@@ -13,7 +13,7 @@ class FilterBar extends React.Component {
         <div className="contentContainer filterBarContentContainer">
           <a className="filterBarOptionContainer">
             <div className="standardText filterBarOptionButton">
-              <MaterialIcon icon="location_on" color="#002878"/>
+              <MaterialIcon icon="location_on" color="#757575"/>
             </div>
             <div className="standardText filterBarOptionName">
               Emory University
@@ -22,14 +22,14 @@ class FilterBar extends React.Component {
           <div className="filterBarOptionDivider"></div>
           <a className="filterBarOptionContainer">
             <div className="standardText filterBarOptionButton">
-              <MaterialIcon icon="store" color="#002878" />
+              <MaterialIcon icon="store" color="#757575" />
             </div>
             <div className="standardText filterBarOptionName">
               DUC-ling
             </div>
           </a>
           <div className="filterBarOptionDivider"></div>
-          <a className="filterBarOptionContainer">
+          <a className="filterBarOptionContainer active">
             <div className="standardText filterBarOptionButton">
               <MaterialIcon icon="access_time" color="#002878" />
             </div>
@@ -38,7 +38,7 @@ class FilterBar extends React.Component {
             </div>
           </a>
           <div className="filterBarOptionDivider"></div>
-          <a className="filterBarOptionContainer">
+          <a className="filterBarOptionContainer active">
             <div className="standardText filterBarOptionButton">
               <MaterialIcon icon="filter_list" color="#002878" />
             </div>

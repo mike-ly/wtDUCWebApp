@@ -5,7 +5,7 @@ class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      links: ["Home", "Menus", "Stats", "About"],
+      links: ["Home", "Menus", "Stats"],
       activeLinkId: 0,
     };
   }
@@ -34,7 +34,7 @@ class NavBar extends React.Component {
 
   handleClick(linkId) {
     let linksCopy = this.state.links.slice();
-    if (linkId != this.state.activeLinkId) {
+    if (linkId !== this.state.activeLinkId) {
       this.setState({
         links: linksCopy,
         activeLinkId: linkId,
@@ -49,12 +49,8 @@ class NavBar extends React.Component {
           <div className="navBarSectionLeft">
             {this.renderLinks(this.state)}
           </div>
-          <img className="navBarLogo" src={require('../images/logoOriginalBlue.png')} />
+          <img className="navBarLogo" src={require('../images/logoOriginalBlue.png')} alt="Quack" />
           <div className="navBarSectionRight">
-            {/*<a className="navBarWriteReviewLink z-depth-1">
-              <MaterialIcon class="navBarWriteReviewIcon" icon="" size={16} />
-              <span>Quack</span>
-            </a>*/}
           </div>
         </div>
       </div>
@@ -67,7 +63,7 @@ function NavBarLink(props) {
 
   return (
     <a className={classes} onClick={props.onClick}>
-      <MaterialIcon icon="" size={16} color="#002878" style="outline" />
+      <MaterialIcon icon="" size={16} color="#002878" />
       <span className="navBarLinkText">{props.linkName}</span>
       <div className="navBarLinkUnderline"></div>
     </a>

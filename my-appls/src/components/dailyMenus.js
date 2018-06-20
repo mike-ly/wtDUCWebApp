@@ -43,7 +43,7 @@ class dailyMenus extends React.Component {
   renderMenuItem(props, item, menu_index, item_index) {
     var score;
     const numbers = ["one", "two", "three", "four", "five"];
-    if (this.state.generalMenuScore[menu_index].length != this.state.generalMenu[menu_index].length) {
+    if (this.state.generalMenuScore[menu_index].length !== this.state.generalMenu[menu_index].length) {
       score = Math.trunc(Math.random() * 5);
       this.state.generalMenuScore[menu_index].push(score);
     } else {
@@ -51,7 +51,7 @@ class dailyMenus extends React.Component {
     }
     var classes = "standardText menuItemText " + numbers[score];
     return (
-      <p className={classes}>{item}</p>
+      <div className={classes}><p>{item}</p></div>
     );
   }
 
