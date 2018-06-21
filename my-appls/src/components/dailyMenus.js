@@ -52,7 +52,15 @@ class dailyMenus extends React.Component {
     }
     var classes = "standardText menuItemText " + numbers[score];
     return (
-      <div className={classes}><p>{item}</p></div>
+      <a className={classes}>
+        <p>{item}</p>
+        <div className="menuItemRateContainer">
+          <div className="menuItemRateBackground"></div>
+          <a className="menuItemRateThumb up"><MaterialIcon icon="thumb_up" color="#4caf50" size="16"/></a>
+          &nbsp;&nbsp;
+          <a className="menuItemRateThumb down"><MaterialIcon icon="thumb_down" color="#f44336" size="16"/></a>
+        </div>
+      </a>
     );
   }
 
@@ -76,9 +84,13 @@ function DailyMenu(props) {
     <div>
       <a className={titleClass} onClick={props.isActive ? null : props.onClick}>{props.meal}<br/></a>
       <div className={contentClass}>
+        <div className="standardDivider menuDivider"></div>
+        <p className="standardText menuSubtitle">Special</p>
+        <div className="standardDivider menuDivider"></div>
+        <p className="standardText menuSubtitle">General</p>
+        <div className="standardClear"></div>
         {props.menuItems}
       </div>
-      <div className="standardDividerNoMargin"></div>
     </div>
   );
 }

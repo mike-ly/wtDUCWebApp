@@ -463,6 +463,80 @@ a:hover {
   line-height: 48px;
 }
 
+.menuSubtitle {
+  display: inline-block;
+  font-weight: 300;
+  color: #bdbdbd;
+  background: #fff;
+  padding-right: 6px;
+  padding-left: 6px;
+  margin-bottom: 12px;
+  margin-left: 18px;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.7px;
+}
+
+.menuDivider {
+  margin: 12px 0 -11px 0;
+  height: 1px;
+}
+
+.menuItemRateContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0 12px;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.1s;
+  transform: translateX(24px);
+}
+
+.menuItemRateBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #212121;
+  opacity: 0;
+  transition: all 0.1s;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.menuItemText:hover > .menuItemRateContainer {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+.menuItemText:hover > .menuItemRateContainer > .menuItemRateBackground {
+  opacity: 0.95;
+}
+
+.menuItemRateContainer:hover > .menuItemRateBackground {
+  opacity: 1 !important;
+}
+
+.menuItemRateThumb {
+  opacity: 0.7;
+  height: 16px;
+  transition: all 0.1s;
+}
+
+.menuItemRateThumb > * {
+  line-height: 100% !important;
+}
+
+.menuItemRateThumb:hover {
+  opacity: 1;
+}
+
 /*==========================================================================*/
 /* -STATIC END */
 /*==========================================================================*/
@@ -496,7 +570,7 @@ a:hover {
   font-weight: 400;
   line-height: 28px;
   height: 28px;
-  width: 120px;
+  width: 128px;
   color: #9e9e9e;
 }
 
