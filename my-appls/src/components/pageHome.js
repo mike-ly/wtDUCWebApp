@@ -14,7 +14,7 @@ function DisplayScoreBar(props) {
       <div className="displayScoreBarUnit"><div className={props.unit4} style={props.unit4style}></div></div>
       <div className="displayScoreBarDivider"></div>
       <div className="displayScoreBarUnit"><div className={props.unit5} style={props.unit5style}></div></div>
-      <p className="standardText homeOverviewScoreDenominator">&nbsp;&nbsp;&nbsp;= {props.scoreByFive} <span className="homeOverviewScoreReviewCount"></span></p>
+      <p className="standardText homeOverviewScoreValue">&nbsp;&nbsp;&nbsp;= {props.scoreByFive}<span className="homeOverviewScoreDenominator"> /5</span> <span className="homeOverviewScoreReviewCount"></span></p>
     </div>
   );
 }
@@ -68,7 +68,7 @@ class HomePage extends React.Component {
           <div className="standardContentPadding"><div className="standardDivider"></div></div>
           <div className="standardContentPadding standardContentFlexRow homeOverviewScoreContainer">
             <p className="standardText standardTextFloatLeft homeOverviewScoreTitle">
-              Breakfast
+              <MaterialIcon icon="lens" color="#2196f3" size="11"/>&nbsp;Breakfast
             </p>
             {this.renderDisplayScoreBar("Breakfast")}
           </div>
