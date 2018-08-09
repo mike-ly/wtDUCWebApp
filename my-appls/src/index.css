@@ -17,7 +17,6 @@ body {
 	margin: 0;
 	font-family: 'Roboto', 'sans-serif';
 	color: #222222;
-	transition: all 0.5s ease-in-out;
 	background: #fff;
 }
 
@@ -28,7 +27,11 @@ body {
   /*background: #e8f5e9;*/ /* Gecko Browsers */
 }
 
-a, br, .noselect {
+* {
+  transition: all 0.15s, background 0s, color 0s;
+}
+
+a, br, .noselect, .menuItemText, .menuSubtitleSpecial {
 	text-decoration: none;
 	-webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -67,7 +70,7 @@ a:hover {
  	box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3);
 }
 
-.z-depth-4, .modal {
+.z-depth-4 {
  	box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3);
 }
 
@@ -77,16 +80,17 @@ a:hover {
 
 .contentContainer {
   margin: 0 auto;
+  width: calc(100vw - 48px);
   max-width: 1100px;
   padding: auto 32px;
 }
 
 .standardText {
   font-weight: 300;
-  letter-spacing: 0.25px;
+  letter-spacing: 0.5px;
   font-size: 14px;
   font-weight: 300;
-  line-height: 175%;
+  line-height: 160%;
   margin: 0;
 }
 
@@ -112,10 +116,7 @@ a:hover {
   margin: 8px auto;
 }
 
-.standardDividerNoMargin {
-  height: 1px;
-  background: #eceff1;
-  width: 100%;
+.standardDivider.noMargin {
   margin: 0px auto;
 }
 
@@ -154,7 +155,6 @@ a:hover {
   padding: 8px 18px;
   color: #fff;
   font-weight: 500;
-  transition: all 0.1s;
 }
 
 .coloredHeader:hover {
@@ -163,6 +163,63 @@ a:hover {
 
 .standardClear {
   clear: both;
+}
+
+.modalContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+.modalBackground {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #222222;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s;
+}
+
+.modalContainer.active > .modalBackground {
+  opacity: 0.8;
+  visibility: visible;
+}
+
+.modal {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(24px);
+  transition: all 0.4s;
+}
+
+.modal .writeReviewContainer {
+  margin: 0;
+}
+
+.modal.writeReviewModal {
+  width: 90%;
+  max-width: 600px;
+}
+
+.modalContainer.active > .modal {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: all 0.4s 0.1s;
+}
+
+.flexDivider {
+  width: 100%;
 }
 
 /*==========================================================================*/
@@ -189,7 +246,7 @@ a:hover {
   grid-gap: 18px;
   grid-template:
     [row1-start] "c1 c2" auto [row1-end]
-    /65fr 35fr;
+    /60fr 40fr;
 }
 
 /*==========================================================================*/
@@ -203,10 +260,11 @@ a:hover {
   position: fixed;
   top: 0;
   width: 100%;
+  padding: 0 24px;
   height: 52px;
   background: #fff;
   border-bottom: 1px solid #cfd8dc;
-  z-index: 1;
+  z-index: 4;
 }
 
 .navBarContentContainer {
@@ -222,6 +280,7 @@ a:hover {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   width: auto;
 }
 
@@ -256,7 +315,6 @@ a:hover {
   text-transform: uppercase;
   letter-spacing: 0.5px;
   font-size: 14px;
-  margin-left: 4px;
   transition: all 0.15s;
 }
 
@@ -272,8 +330,8 @@ a:hover {
 .navBarLogo {
   height: 24px;
   width: 24px;
-  position: absolute;
-  left: calc(50% - 12px);
+  margin-right: 16px;
+  /*left: calc(50% - 12px);*/
 }
 
 /*==========================================================================*/
@@ -284,10 +342,12 @@ a:hover {
 /*==========================================================================*/
 
 .filterBarGeneralContainer {
+  position: relative;
   background: #fff;
   width: 100%;
   height: 46px;
   border-bottom: 1px solid #cfd8dc;
+  z-index: 3;
 }
 
 .filterBarContentContainer {
@@ -299,38 +359,42 @@ a:hover {
   position: relative;
 }
 
-.filterBarOptionDivider {
+.filterBarActivationDivider {
   height: 50%;
   margin: 0;
   width: 1px;
   background: #eceff1;
 }
 
-.filterBarOptionContainer {
+.filterBarSectionContainer {
   height: 38px;
-  padding: 0 12px;
-  margin: 0 4px;
+  position: relative;
+}
+
+.filterBarActivationContainer {
   display: flex;
+  height: 100%;
+  margin: 0 4px;
+  padding: 0 12px;
   flex-direction: row;
   align-items: center;
-  transition: all 0.1s;
   border-radius: 5px;
 }
 
-.filterBarOptionContainer:hover {
+.filterBarActivationContainer:hover {
   cursor: auto;
 }
 
-.filterBarOptionContainer.active:hover {
+.filterBarActivationContainer.active:hover {
   background: #f5f5f5;
   cursor: pointer;
 }
 
-.filterBarOptionContainer.active .filterBarOptionName {
+.filterBarActivationContainer.active .filterBarName {
   color: #002878;
 }
 
-.filterBarOptionName {
+.filterBarName {
   height: 24px;
   font-size: 12px;
   font-weight: 500;
@@ -339,13 +403,83 @@ a:hover {
   margin: 0 4px;
 }
 
-.filterBarOptionButton {
+.filterBarActivationButton {
   height: 24px;
   font-size: 12px;
   font-weight: 500;
   color: #002878;  
   line-height: 24px;
   margin: 0 4px;
+}
+
+.filterBarOptionsContainer {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 46px;
+  left: 4px;
+  min-width: calc(100% - 8px);
+  background: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-24px);
+  z-index: -1;
+}
+
+.filterBarOptionsContainer.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.filterBarOption {
+  display: block;
+  padding: 12px 12px;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.filterBarOption.active {
+  background: #fafafa;
+}
+
+.filterBarOption.active > .filterBarOptionText {
+  color: #002878 !important;
+  font-weight: 500;
+}
+
+.filterBarOption:hover {
+  background: #f5f5f5;
+}
+
+.filterBarOption:hover > .filterBarOptionText {
+  color: #222222;
+}
+
+.filterBarOptionText {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 400;
+  color: #bdbdbd;
+  letter-spacing: 0.4px;
+}
+
+.filterBarOptionsBackDiv {
+  position: relative;
+  display: block;
+  height: 100vh;
+  width: 100vw;
+  opacity: 0.2;
+  visibility: hidden;
+  background: #222222;
+  z-index: -2;
+  transition: all 0;
+}
+
+.filterBarOptionsBackDiv.active {
+  opacity: 0.2;
+  visibility: visible;
 }
 
 /*==========================================================================*/
@@ -377,33 +511,84 @@ a:hover {
   width: 100%;
 }
 
-.menuTitle {
-  color: #9e9e9e;
+.menuDatesContainer {
+  padding: 8px 8px 4px 8px;
+  background: #f5f5f5;
+}
+
+.menuDateItemText {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  margin: 0 4px 4px 0;
+  padding: 8px 10px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  height: 32px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  background: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.menuDateItemText.active {
+  background: #9e9e9e !important;
+}
+
+.menuDateItemText:hover {
+  background: #bdbdbd;
+}
+
+.menuTitlesContainer {
+  padding: 8px 8px 4px 8px;
+  background: #fafafa;
+}
+
+/*.menuTitle {
+  color: #bdbdbd;
   display: block;
   font-weight: 500;
-  margin: 4px;
+  margin-left: 4px;
+  margin-right: 4px;
+  margin-bottom: 4px;
   height: 36px;
   line-height: 36px;
   border-radius: 5px;
-  transition: all 0.1s;
+  background: #fafafa;
+}*/
+
+.menuTitle {
+  color: #fff;
+  display: inline-block;
+  font-weight: 500;
+  margin: 0 4px 4px 0;
+  margin-bottom: 4px;
+  height: 32px;
+  line-height: 32px;
+  border-radius: 5px;
+  background: #e0e0e0;
+  vertical-align: top;
+  text-align: center;
 }
 
-.menuTitle:hover {
-  background: #f5f5f5;
+.menuTitle:hover, .menuTitle.active:hover {
+  background: #bdbdbd;
 }
 
 .menuTitle.active {
-  background: #f5f5f5;
+  background: #9e9e9e !important;
 }
 
 .menuTitle.active:hover {
-  cursor: auto;
+  /*cursor: auto;*/
 }
 
 .menuContainer {
   overflow: hidden;
   width: 100%;
-  transition: all 0.1s;
   height: 0;
   opacity: 0;
   text-align: left;
@@ -413,26 +598,43 @@ a:hover {
 .menuContainer.active {
   height: auto;
   opacity: 1;
-  padding: 18px 24px 24px 24px;
+  padding: 16px 24px 12px 24px;
+}
+
+.generalMenuContainer {
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  opacity: 0;
+  text-align: left;
+}
+
+.generalMenuContainer.active {
+  height: auto;
+  opacity: 1;
 }
 
 .menuItemText {
   position: relative;
-  overflow: hidden;
   display: inline-block;
   color: #fff;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-right: 4px;
-  padding: 8px 10px;
+  margin: 0 4px 4px 0;
+  padding: 8px 42px 8px 10px;
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
+  height: 32px;
   letter-spacing: 0.6px;
   text-transform: uppercase;
   background: #9e9e9e;
   border-radius: 5px;
+  overflow: hidden;
+  vertical-align: top;
 }
+
+/*.menuItemText.active {
+  padding-right: 42px;
+}*/
 
 .menuItemText > p {
   margin: 0;
@@ -468,18 +670,86 @@ a:hover {
   font-weight: 300;
   color: #bdbdbd;
   background: #fff;
-  padding-right: 6px;
-  padding-left: 6px;
+  padding-right: 8px;
+  padding-left: 8px;
   margin-bottom: 12px;
-  margin-left: 18px;
+  margin-left: 12px;
   text-transform: uppercase;
   font-size: 12px;
   letter-spacing: 0.7px;
 }
 
+.menuSubtitleSpecial {
+  display: inline-block;
+  font-weight: 300;
+  color: #bdbdbd;
+  background: #fff;
+  padding-right: 8px;
+  padding-left: 8px;
+  margin-bottom: 12px;
+  margin-left: 16px;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.7px;
+  border-radius: 5px;
+  border: 1px solid #eceff1;
+  height: 21px;
+  line-height: 21px;
+}
+
+.menuSubtitleGeneral {
+  display: inline-block;
+  font-weight: 300;
+  color: #bdbdbd;
+  background: #fff;
+  padding-right: 8px;
+  padding-left: 8px;
+  margin-bottom: 12px;
+  margin-left: 16px;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.7px;
+  border-radius: 5px;
+  border: 1px solid #eceff1;
+  height: 21px;
+  line-height: 21px;
+}
+
+a.menuSubtitleGeneral:hover {
+  background: #eceff1;
+}
+
+.menuSubtitleGeneralContainer {
+  height: 21px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuSubtitleGeneralIconContainer {
+  height: 21px;
+  margin-top: -2px;
+  transition: 0.1s
+}
+
+.menuSubtitleGeneralIconContainer > i {
+  line-height: 21px;
+  height: 21px;
+}
+
+.menuSubtitleGeneralIconContainer.active {
+  transform: rotate(180deg) !important;
+}
+
 .menuDivider {
   margin: 12px 0 -11px 0;
   height: 1px;
+}
+
+.menuSectionDivider {
+  height: 16px;
+  width: 100%;
 }
 
 .menuItemRateContainer {
@@ -490,10 +760,9 @@ a:hover {
   position: absolute;
   right: 0;
   top: 0;
-  padding: 0 12px;
+  padding: 0 10px;
   height: 100%;
   opacity: 0;
-  transition: all 0.1s;
   transform: translateX(24px);
 }
 
@@ -501,9 +770,8 @@ a:hover {
   position: absolute;
   top: 0;
   left: 0;
-  background: #212121;
+  background: #fff;
   opacity: 0;
-  transition: all 0.1s;
   height: 100%;
   width: 100%;
   z-index: -1;
@@ -516,17 +784,16 @@ a:hover {
 
 
 .menuItemText:hover > .menuItemRateContainer > .menuItemRateBackground {
-  opacity: 0.95;
+  opacity: 1;
 }
 
-.menuItemRateContainer:hover > .menuItemRateBackground {
-  opacity: 1 !important;
+.menuItemText:hover > .menuItemRateContainer > .menuItemRateBackground.active {
+  opacity: 1;
 }
 
 .menuItemRateThumb {
   opacity: 0.7;
   height: 16px;
-  transition: all 0.1s;
 }
 
 .menuItemRateThumb > * {
@@ -535,11 +802,50 @@ a:hover {
 
 .menuItemRateThumb:hover {
   opacity: 1;
+  transform: rotate(-10deg);
+}
+
+.menuItemRateThumb.active {
+  opacity: 1;
+  transform: rotate(-30deg);
+}
+
+.menuItemRateThumb.inactive {
+  opacity: 0.5;
+}
+
+.menuItemRatedContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  height: calc(100% - 4px);
+  padding: 0 8px;
+  background: #fff;
+  border-radius: 4px;
+  opacity: 0.5;
+}
+
+.menuItemRatedContainer.active {
+  opacity: 1;
+}
+
+.menuItemRatedContainer.active > .menuItemRatedThumb {
+  transform: rotate(-30deg);
+}
+
+.menuItemRatedThumb {
+  opacity: 1;
+  height: 16px;
 }
 
 /*==========================================================================*/
 /* -STATIC END */
 /*==========================================================================*/
+
 /*==========================================================================*/
 /* -HOME START */
 /*==========================================================================*/
@@ -562,6 +868,7 @@ a:hover {
 }
 
 .homeOverviewScoreContainer {
+  position: relative;
   padding-top: 12px;
 }
 
@@ -572,6 +879,31 @@ a:hover {
   height: 28px;
   width: 128px;
   color: #9e9e9e;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  35% {
+    opacity: 0.05;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.homeOverviewActiveIcon {
+  animation: pulse 2.5s infinite;
+  color: #2196f3;
+  font-size: 36px;
+  line-height: 28px;
+  display: block;
+  margin: 0 4px 0 0;
+  position: absolute;
 }
 
 .homeOverviewScoreValue {
@@ -609,6 +941,57 @@ a:hover {
 /*==========================================================================*/
 
 /*==========================================================================*/
+/* -GREETING START */
+/*==========================================================================*/
+
+.greetingContainer {
+  padding: 16px;
+  background: #fff;
+  border-radius: 5px;
+  margin-bottom: 12px;
+}
+
+.standardText.greetingText.greetingHeaderText {
+  font-weight: 300;
+  font-size: 20px;
+  color: #616161;
+  transition: all 0.5s 0.5s;
+  margin-bottom: 3px;
+}
+
+.greetingHeaderText {
+  opacity: 0;
+  transform: translateX(12px);
+  visibility: hidden;
+}
+
+.greetingHeaderText.active {
+  opacity: 1;
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.standardText.greetingText.statusText {
+  font-weight: 300;
+  font-size: 14px;
+  margin-bottom: 16px;
+  line-height: 100%;
+  color: #757575;
+}
+
+.standardText.greetingText {
+  color: #9e9e9e;
+}
+
+.standardText.greetingText > span {
+  font-weight: 500;
+}
+
+/*==========================================================================*/
+/* -GREETING END */
+/*==========================================================================*/
+
+/*==========================================================================*/
 /* -REVIEW START */
 /*==========================================================================*/
 
@@ -624,22 +1007,32 @@ a:hover {
   width: 100%;
   height: 100%;
   margin: 0;
-  padding: 13px 13px 0 13px;
+  padding: 13px 13px 13px 13px;
   border-radius: 5px;
   border: 1px solid #e0e0e0;
-  transition: all 0.1s;
   font-size: 16px;
   font-weight: 400;
   line-height: 22px;
   resize: none;
   letter-spacing: 0.25px;
   background: #fafafa;
+  transition: border 0.1s, padding 0.1s;
+}
+
+.writeReviewInput::placeholder {
+  color: #bdbdbd;
 }
 
 .writeReviewInput:focus {
-  border: 2px solid #002878;
-  padding: 12px 12px 18px 12px;
+  border: 1px solid #002878;
   outline: none;
+}
+
+
+.standardText.writeReviewDescriptionText {
+  padding-left: 8px;
+  padding-right: 8px;
+  color: #9e9e9e;
 }
 
 .writeReviewBar {
@@ -648,6 +1041,14 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.writeReviewFlexDivider {
+  margin-top: 8px;
+  margin-left: auto;
+  padding-top: 8px;
+  border-top: 1px solid #eceff1;
 }
 
 .writeReviewScoreBar {
@@ -660,43 +1061,93 @@ a:hover {
 
 .writeReviewScoreTitle {
   line-height: 32px;
-  margin-right: 12px;
-  margin-left: 4px;
+  margin-right: 6px;
+  margin-left: 8px;
   font-weight: 500;
   letter-spacing: 0.5px;
   font-size: 12px;
   text-transform: uppercase;
+  color: #9e9e9e;
+}
+
+.writeReviewScoreDenominator {
+  line-height: 32px;
+  margin-right: 6px;
+  margin-left: 8px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #bdbdbd;
 }
 
 .writeReviewDisplayScoreBar {
   height: 32px;
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
 }
 
 .writeReviewDisplayScoreBarUnit {
   position: relative;
   height: 100%;
-  width: 32px;
-  border: 1px solid #e0e0e0;
-  border-radius: 5px;
-  overflow: hidden;
+  width: 33px;
 }
 
 .writeReviewDisplayScoreBarUnitFill {
   height: 100%;
-  width: 100%;
-  background: #fafafa;
-  color: #fafafa;
+  width: 32px;
+  background: #bdbdbd;
+  color: #fff;
   text-align: center;
   line-height: 32px;
   font-weight: 500;
-  transition: all 0.1s;
+  border: 0px solid #e0e0e0;
+  border-radius: 5px;
 }
 
-.writeReviewDisplayScoreBarUnitFill:hover {
+.writeReviewDisplayScoreBarUnitFill.filled {
+  background: #003296;
+  color: #0142C2;
+}
+
+.writeReviewDisplayScoreBarUnitFill.active {
+  background: #003296 !important;
+  color: #fff !important;
+}
+
+.writeReviewDisplayScoreBarUnit:hover > .writeReviewDisplayScoreBarUnitFill {
   background: #002878;
   color: #fff;
+}
+
+#writeReviewDisplayScoreBarUnit2:hover ~ #writeReviewDisplayScoreBarUnit1 > .writeReviewDisplayScoreBarUnitFill
+{
+  background: #002878;
+  color: #0142C2;
+}
+
+#writeReviewDisplayScoreBarUnit3:hover ~ #writeReviewDisplayScoreBarUnit2 > .writeReviewDisplayScoreBarUnitFill,
+#writeReviewDisplayScoreBarUnit3:hover ~ #writeReviewDisplayScoreBarUnit1 > .writeReviewDisplayScoreBarUnitFill
+{
+  background: #002878;
+  color: #0142C2;
+}
+
+#writeReviewDisplayScoreBarUnit4:hover ~ #writeReviewDisplayScoreBarUnit3 > .writeReviewDisplayScoreBarUnitFill,
+#writeReviewDisplayScoreBarUnit4:hover ~ #writeReviewDisplayScoreBarUnit2 > .writeReviewDisplayScoreBarUnitFill,
+#writeReviewDisplayScoreBarUnit4:hover ~ #writeReviewDisplayScoreBarUnit1 > .writeReviewDisplayScoreBarUnitFill
+{
+  background: #002878;
+  color: #0142C2;
+}
+
+#writeReviewDisplayScoreBarUnit5:hover ~ #writeReviewDisplayScoreBarUnit4 > .writeReviewDisplayScoreBarUnitFill,
+#writeReviewDisplayScoreBarUnit5:hover ~ #writeReviewDisplayScoreBarUnit3 > .writeReviewDisplayScoreBarUnitFill,
+#writeReviewDisplayScoreBarUnit5:hover ~ #writeReviewDisplayScoreBarUnit2 > .writeReviewDisplayScoreBarUnitFill,
+#writeReviewDisplayScoreBarUnit5:hover ~ #writeReviewDisplayScoreBarUnit1 > .writeReviewDisplayScoreBarUnitFill
+{
+  background: #002878;
+  color: #0142C2;
 }
 
 .writeReviewDisplayScoreBarDivider {
@@ -715,7 +1166,7 @@ a:hover {
   position: relative;
   height: 100%;
   width: 28px;
-  background: #fafafa;
+  background: #f5f5f5;
   border-radius: 5px;
   overflow: hidden;
 }
@@ -758,7 +1209,7 @@ a:hover {
   justify-content: center;
   height: 32px;
   padding: 0 18px;
-  background: #002878;
+  background: #003296;
   color: #fff;
   font-weight: 400;
   text-transform: uppercase;
@@ -766,16 +1217,33 @@ a:hover {
   border: 1px solid transparent;
   font-size: 14px;
   letter-spacing: 0.5px;
-  transition: all 0.1s;
+  opacity: 1;
+  margin-left: auto;
+}
+
+.writeReviewLink.inactive {
   opacity: 0.5;
 }
 
-.writeReviewLink.active {
-  opacity: 1;
+.writeReviewLink.inactive:hover {
+  background: #003296;
+  cursor: auto;
 }
 
-.writeReviewLink.active:hover {
+.writeReviewLink:hover {
   background: #0142C2;
+}
+
+.writeReviewLink.navBarWriteReviewLink {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-6px);
+}
+
+.writeReviewLink.navBarWriteReviewLink.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
 }
 
 .writeReviewIcon {
@@ -785,4 +1253,87 @@ a:hover {
 
 /*==========================================================================*/
 /* -REVIEW END */
+/*==========================================================================*/
+
+/*==========================================================================*/
+/* -STATS START */
+/*==========================================================================*/
+
+.statContainer {
+  display: block;
+}
+
+div > .statContainer:hover {
+  background: #f5f5f5;
+}
+
+.statContainer.odd {
+  background: #fff;
+}
+
+.statContainer.even {
+  background: #fafafa;
+}
+
+.statGrid {
+  padding: 8px;
+  display: grid;
+  grid-gap: 0px;
+  grid-template:
+    [row1-start] "c1 c2" auto [row1-end]
+    /54px 1fr;
+}
+
+.statDateContainer {
+  grid-area: "c1";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+
+.statDate {
+  height: 46px;
+  width: 46px;
+  border-radius: 5px;
+  background: #fff;
+  overflow: hidden;
+  border: 1px solid #f5f5f5;
+}
+
+.statDateMonth {
+  height: 20px;
+  line-height: 20px;
+  font-size: 10px;
+  background: #e57373;
+  color: #fff;
+  margin: 0;
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.statDateDay {
+  height: 26px;
+  line-height: 26px;
+  font-size: 16px;
+  color: #222222;
+  background: #fff;
+  margin: 0;
+  text-align: center;
+}
+
+.statInfoContainer {
+  grid-area: "c2";
+  padding-left: 12px;
+  padding-top: 4px;
+  padding-right: 4px;
+  padding-bottom: 4px;
+  display: flex;
+  align-items: center;
+}
+
+/*==========================================================================*/
+/* -STATS END */
 /*==========================================================================*/

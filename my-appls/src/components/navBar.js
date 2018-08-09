@@ -1,13 +1,19 @@
 import React from 'react';
-import MaterialIcon from 'material-icons-react';
+import WriteReview from './writeReview.js';
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      links: ["Home", "Menus", "Stats"],
+      links: ["Home"],
       activeLinkId: 0,
+      modalActive: false,
     };
+  }
+
+  componentWillUnmount() {
+    clearAllBodyScrollLocks();
   }
 
   renderLinks(navBarState) {
@@ -27,12 +33,12 @@ class NavBar extends React.Component {
         key={linkId}
         linkName={linkName}
         isActive={isActive}
-        onClick={() => this.handleClick(linkId)}
+        onClick={() => this.handleNavLinkClick(linkId)}
       />
     );
   }
 
-  handleClick(linkId) {
+  handleNavLinkClick(linkId) {
     let linksCopy = this.state.links.slice();
     if (linkId !== this.state.activeLinkId) {
       this.setState({
@@ -42,16 +48,45 @@ class NavBar extends React.Component {
     }
   }
 
+  modalOpen() {
+    this.setState({
+      modalActive: true
+    });
+    disableBodyScroll(document.getElementsByTagName("BODY")[0]);
+  }
+
+  modalClose() {
+    this.setState({
+      modalActive: false
+    });
+    enableBodyScroll(document.getElementsByTagName("BODY")[0]);
+  }
+
+  handleScroll = (e) => {
+    const bottom = e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight;
+    console.log(bottom);
+  }
+
   render() {
+    let modalContainerClass = this.state.modalActive ? "modalContainer active": "modalContainer";
+    let navBarWriteReviewLinkClass = this.props.navBarQuackActive ? "writeReviewLink navBarWriteReviewLink z-depth-2 active" : "writeReviewLink navBarWriteReviewLink z-depth-2";
     return(
       <div className="navBarGeneralContainer generalContainer">
         <div className="contentContainer navBarContentContainer">
           <div className="navBarSectionLeft">
+            <img className="navBarLogo" src={require('../images/logoOriginalBlue.png')} alt="Quack" />
             {this.renderLinks(this.state)}
           </div>
-          <img className="navBarLogo" src={require('../images/logoOriginalBlue.png')} alt="Quack" />
-          <div className="navBarSectionRight">
+          <a id="navBarWriteReviewLink" className={navBarWriteReviewLinkClass} onClick={() => this.modalOpen()}>
+            <span>Quack</span>
+          </a>
+          <div className={modalContainerClass}>
+            <a className="modalBackground" onClick={() => this.modalClose()}> </a>
+            <div className="modal writeReviewModal">
+              <WriteReview/>
+            </div>
           </div>
+          {/*<div className="navBarSectionRight"></div>*/}
         </div>
       </div>
     );
@@ -63,7 +98,6 @@ function NavBarLink(props) {
 
   return (
     <a className={classes} onClick={props.onClick}>
-      <MaterialIcon icon="" size={16} color="#002878" />
       <span className="navBarLinkText">{props.linkName}</span>
       <div className="navBarLinkUnderline"></div>
     </a>

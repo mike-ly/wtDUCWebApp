@@ -8,16 +8,35 @@ import FilterBar from './filterBar.js'
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      navBarQuackActive: false
+    };
+  }
+
+  navBarQuackActivate() {
+    this.setState({
+      navBarQuackActive: true
+    });
+  }
+
+  navBarQuackDeactivate() {
+    this.setState({
+      navBarQuackActive: false
+    });
   }
 
   render() {
     return(
     	<div className="appContainer">
-	      <NavBar/>
+	      <NavBar
+          navBarQuackActive={this.state.navBarQuackActive}
+        />
         <FilterBar/>
         <div className="contentContainer appContentContainer">
-	       <HomePage/>
+	       <HomePage
+          navBarQuackActivate={() => this.navBarQuackActivate()}
+          navBarQuackDeactivate={() => this.navBarQuackDeactivate()}
+         />
          <StaticPage/>
         </div>
       </div>
