@@ -7,7 +7,7 @@ class FilterBarItem extends React.Component {
     super(props);
     this.handleOptionClick = this.handleOptionClick.bind(this);
     this.state = {
-      activeOption: 0,
+      activeOption: this.props.activeOption,
       isActivated: false,
       activationEnabled: true,
       deactivationEnabled: false
@@ -15,11 +15,12 @@ class FilterBarItem extends React.Component {
   }
 
   render() {
+    console.log("RENDER: filterBarItem");
     return(
       <div className="filterBarSectionContainer">
         <a className="filterBarActivationContainer active" onClick={() => this.handleActivationClick()}>
           <div className="standardText filterBarActivationButton">
-            <MaterialIcon icon={this.props.icon} color="#002878" />
+            <MaterialIcon icon={this.props.icon} color="#3f51b5" />
           </div>
           <div className="standardText filterBarName">
             {this.props.options[this.state.activeOption]}
@@ -72,6 +73,7 @@ class FilterBarItem extends React.Component {
       activeOption: index,
       activationEnabled: true
     });
+    this.props.parentActivation(this.props.type, this.props.options[index]);
   }
 
   openDropdown() {

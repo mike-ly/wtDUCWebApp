@@ -68,13 +68,14 @@ class NavBar extends React.Component {
   }
 
   render() {
+    console.log("RENDER: navBar");
     let modalContainerClass = this.state.modalActive ? "modalContainer active": "modalContainer";
     let navBarWriteReviewLinkClass = this.props.navBarQuackActive ? "writeReviewLink navBarWriteReviewLink z-depth-2 active" : "writeReviewLink navBarWriteReviewLink z-depth-2";
     return(
       <div className="navBarGeneralContainer generalContainer">
         <div className="contentContainer navBarContentContainer">
           <div className="navBarSectionLeft">
-            <img className="navBarLogo" src={require('../images/logoOriginalBlue.png')} alt="Quack" />
+            <img className="navBarLogo" src={require('../images/logoOriginalIndigo.png')} alt="Quack" />
             {this.renderLinks(this.state)}
           </div>
           <a id="navBarWriteReviewLink" className={navBarWriteReviewLinkClass} onClick={() => this.modalOpen()}>

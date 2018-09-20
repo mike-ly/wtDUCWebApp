@@ -56,7 +56,7 @@ function DisplayScoreBar(props) {
       <div className="displayScoreBarUnit"><div className={props.unit4} style={props.unit4style}></div></div>
       <div className="displayScoreBarDivider"></div>
       <div className="displayScoreBarUnit"><div className={props.unit5} style={props.unit5style}></div></div>
-      <p className="standardText homeOverviewScoreValue">&nbsp;&nbsp;&nbsp;<span className="homeOverviewScoreDenominator">=</span> {props.scoreByFive}<span className="homeOverviewScoreDenominator"> /5</span> <span className="homeOverviewScoreReviewCount"></span></p>
+      {/*<p className="standardText homeOverviewScoreValue">&nbsp;&nbsp;&nbsp;<span className="homeOverviewScoreDenominator">=</span> {props.scoreByFive}<span className="homeOverviewScoreDenominator"> /5</span> <span className="homeOverviewScoreReviewCount"></span></p>*/}
     </div>
   );
 }

@@ -26,6 +26,10 @@ class DailyMenus extends React.Component {
     }
   }
 
+  shouldComponentUpdate(nextProps) {
+    return true;
+  }
+
   render() {
     console.log("RENDER: DailyMenus");
   	return (
@@ -33,6 +37,7 @@ class DailyMenus extends React.Component {
         <div className="menuTitlesContainer">
           {this.renderMenuTitles()}
         </div>
+        <div className="standardDivider noMargin"></div>
         {this.renderMenu(this.props, 0)}
         {this.renderMenu(this.props, 1)}
         {this.renderMenu(this.props, 2)}

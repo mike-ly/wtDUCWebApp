@@ -6,7 +6,7 @@ class FilterBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hasActivated: false
+      hasActivated: false,
     };
   }
 
@@ -27,29 +27,37 @@ class FilterBar extends React.Component {
           <div className="filterBarActivationDivider"></div>
           <FilterBarItem 
             key={0}
-            options={["DUC-ling", "Rollin's Café", "SAAC Café", "Ray's at WREC"]} 
             icon="store"
+            type="diningHall"
+            options={["All dining halls", "DUC-ling", "Rollin's Café", "SAAC Café", "Ray's at WREC"]} 
+            activeOption={0}
             parentActivation={() => this.handleOptionActivation()}
           />
           <div className="filterBarActivationDivider"></div>
           <FilterBarItem 
             key={1}
-            options={["Today", "This week", "This month", "This year"]} 
             icon="date_range"
+            type="timePeriod"
+            options={["Today", "This week", "This month", "This year"]}
+            activeOption={0}
             parentActivation={() => this.handleOptionActivation()}
           />
           <div className="filterBarActivationDivider"></div>
           <FilterBarItem 
             key={2}
-            options={["All", "Breakfast", "Lunch", "Dinner"]} 
             icon="fastfood"
+            type="meal"
+            options={["All meals", "Breakfast", "Lunch", "Dinner"]} 
+            activeOption={0}
             parentActivation={() => this.handleOptionActivation()}
           />
           <div className="filterBarActivationDivider"></div>
           <FilterBarItem 
             key={3}
-            options={["Hot", "New", "Top", "Low"]} 
             icon="filter_list"
+            type="sortMethod"
+            options={["New", "Hot", "Top", "Low"]}
+            activeOption={0}
             parentActivation={() => this.handleOptionActivation()}
           />
         </div>
@@ -58,9 +66,9 @@ class FilterBar extends React.Component {
   };
 
    handleOptionActivation() {
-    this.setState({
-      hasActivated: !this.state.hasActivated
-    });
+    // this.setState({
+    //   hasActivated: !this.state.hasActivated
+    // });
    }
 }
 

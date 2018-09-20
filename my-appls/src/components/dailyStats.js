@@ -11,6 +11,15 @@ class DailyStats extends React.Component {
     }
   }
 
+  shouldComponentUpdate(nextProps) {
+    return true;
+  }
+
+  getMonthString(date) {
+    const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+    return months[date.getMonth()];
+  }
+
   render() {
     console.log("RENDER: DailyStats");
   	return (
@@ -22,33 +31,37 @@ class DailyStats extends React.Component {
 
   renderDailyStats() {
     let dailyStats = [];
+    let date = new Date();
     for (let i = 0; i < 5; i++) {
-      dailyStats.push(this.renderDailyStat(i));
+      date.setDate(date.getDate() - 1);
+      dailyStats.push(this.renderDailyStat(i, this.getMonthString(date), date.getDate()));
     }
     return dailyStats;
   }
 
-  renderDailyStat(index) {
+  renderDailyStat(index, month, day) {
     return(
       <DailyStat
         key={index}
         isOdd={index % 2 === 0}
+        month={month}
+        day={day}
       />
     );
   }
 }
 
 function DailyStat(props) {
-  const statContainerClass = props.isOdd ? "statContainer odd" : "statContainer even";
+  // const statContainerClass = props.isOdd ? "statContainer odd" : "statContainer even";
   return (
     <div>
       {/*<a className={titleClass} onClick={props.onMenuClick}>{props.meal}<br/></a>*/}
-      <a className={statContainerClass}>
+      <a className="statContainer">
         <div className="statGrid">
           <div className="statDateContainer">
             <div className="statDate z-depth-">
-              <p class="statDateMonth">May</p>
-              <p class="statDateDay">21</p>
+              <p className="statDateMonth">{props.month}</p>
+              <p className="statDateDay">{props.day}</p>
             </div>
           </div>
           <div className="statInfoContainer">
@@ -58,6 +71,7 @@ function DailyStat(props) {
           </div>
         </div>
       </a>
+      <div className="standardDivider noMargin"></div>
     </div>
   );
 }

@@ -9,7 +9,7 @@ class FilterBarOptions extends React.Component {
 
   render() {
     let options = [];
-    let filterBarOptionsContainerClass = this.props.isActivated ? "filterBarOptionsContainer z-depth-1 active" : "filterBarOptionsContainer z-depth-1";
+    let filterBarOptionsContainerClass = this.props.isActivated ? "filterBarOptionsContainer z-depth-2 active" : "filterBarOptionsContainer z-depth-2";
     for (let i = 0; i < this.props.options.length; i++) {
       options.push(this.renderOption(this.props.options[i], i, this.props.activeOption === i))
     }
