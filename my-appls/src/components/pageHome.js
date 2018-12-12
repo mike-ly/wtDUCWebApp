@@ -14,6 +14,7 @@ class HomePage extends React.Component {
       month: months[this.currentDate.getMonth()],
       dateNumber: this.currentDate.getDate(),
       activeMeal: this.decideActiveMeal(this.currentDate, this.props.mealTimes),
+      feed: [],
     };
 
     console.log(this.decideActiveMeal(this.currentDate, this.props.mealTimes));
@@ -58,6 +59,62 @@ class HomePage extends React.Component {
       minutes = "0" + minutes;
     }
     return "" + hours + ":" + minutes + " " + ampm;
+  }
+
+  retriveReviews(date) {
+
+  }
+
+  appendReviewToFeed(name, score, text, school, diningHall, meal, date) {
+    let feed = this.state.feed.slice();
+    feed.append(this.renderReview(name, score, text, school, diningHall, meal, date));
+    this.setState({
+      feed: feed
+    });
+  }
+
+  renderReview(name, score, text, school, diningHall, meal, date) {
+    let hourString = "";
+    let minuteString = "";
+    
+    let timeDifference = date.getTime() - (new Date().getTime());
+    let minuteDifference = parseInt(timeDifference / 1000 / 60, 10);
+    if (minuteDifference < 0) {
+      alert("ERROR: review from the future!");
+      return;
+    }
+    let hours = parseInt(minuteDifference / 60, 10);
+    let minutes = minuteDifference % 60;
+
+    let andString = "";
+    if (hours > 0 && minutes > 0) {
+      andString = " and";
+    }
+    if (hours === 0) {
+      hourString = "";
+    } else if (hours > 1) {
+      hourString = " " + hours + " hours";
+    } else if (hours > 0) {
+      hourString = " " + hours + " hour";
+    }
+    if (minutes === 0) {
+      minuteString = "";
+    } else if (minutes > 1) {
+      minuteString = " " + minutes + " minutes";
+    } else if (minutes > 0) {
+      minuteString = " " + minutes + " minute";
+    }
+    const dateString = hourString + andString + minuteString;
+    return(
+      <p className="standardText standardTextPaddingHorizontal standardTextPaddingVertical">
+        <b>{name}</b>
+        &nbsp;&nbsp;<span className="reviewDate">&bull;&nbsp;&nbsp;{dateString}</span>
+        &nbsp;&nbsp;<span className="reviewDate">&bull;&nbsp;&nbsp;{school}</span>
+        &nbsp;&nbsp;<span className="reviewDate">&bull;&nbsp;&nbsp;{diningHall}</span>
+        &nbsp;&nbsp;<span className="reviewDate">&bull;&nbsp;&nbsp;{meal}</span><br/>
+        {text}
+      </p>
+    );
   }
 
   render() {
@@ -141,6 +198,8 @@ class HomePage extends React.Component {
           </div>
         </Waypoint>
         <div className="standardContentContainer">
+          {this.state.feed}
+          {/*
           <p className="standardText standardTextPaddingHorizontal standardTextPaddingVertical">
             <b>Goofy Goose</b>
             &nbsp;&nbsp;<span className="reviewDate">&bull;&nbsp;&nbsp;24m</span>
@@ -158,6 +217,7 @@ class HomePage extends React.Component {
             &nbsp;&nbsp;<span className="reviewDate">&bull;&nbsp;&nbsp;Breakfast</span><br/>
             Wouldn't recommend, workers are grumpy today >:(
           </p>
+          */}
         </div>
       </div>
     );
